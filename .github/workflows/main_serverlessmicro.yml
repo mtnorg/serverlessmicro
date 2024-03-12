@@ -17,28 +17,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.1.1
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.release.target_commitish }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@v4
 
-      - name: Set up node
-        uses: actions/setup-node@v4.0.2
+      - name: Setup Node ${{ env.NODE_VERSION }} Environment
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'yarn'
-          scope: '@kente-trial'
-          registry-url: https://npm.pkg.github.com/
-          always-auth: true
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: 'Resolve Project Dependencies Using Npm'
         shell: bash
         run: |
-          # pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
+          pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           npm install
           npm run build --if-present
+          # npm run test --if-present
           popd
 
       - name: Zip artifact for deployment
@@ -56,7 +49,7 @@ jobs:
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
+    
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
@@ -65,7 +58,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-
+      
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
