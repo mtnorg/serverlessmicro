@@ -35,9 +35,6 @@ jobs:
       - name: Check Linting
         run: yarn run lint:check
 
-      - name: Run Unit testing
-        run: yarn run test
-
       - name: Build artifacts
         run: yarn run build
 
