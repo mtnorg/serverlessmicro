@@ -1,12 +1,28 @@
 {
-  "extends": ["@mtnkente/eslint-config"],
-  "ignorePatterns": ["!**/*"],
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "@typescript-eslint"],
+  "env": {
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "prettier/prettier": ["error"]
+  },
   "overrides": [
     {
-      "files": ["*.json"],
-      "parser": "jsonc-eslint-parser",
+      "files": ["*.ts", "*.tsx"],
       "rules": {
-        "@nx/dependency-checks": "error"
+        "@typescript-eslint/some-rule": "off"
       }
     }
   ]

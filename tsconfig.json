@@ -1,13 +1,28 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "outDir": "dist",
-    "rootDir": ".",
-    "skipLibCheck": true,
+    "rootDir": "lib",
     "sourceMap": true,
-    "strict": true,
-    "types": ["node"]
+    "declaration": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"]
+  "include": [],
+  "exclude": ["node_modules", "coverage", "test-*"],
+  "references": [
+    {
+      "path": "./tsconfig.lib.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
 }

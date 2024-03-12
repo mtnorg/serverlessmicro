@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["jest", "node"]
+  },
+  "include": [
+    "jest.config.ts",
+    "lib/**/*.test.ts",
+    "lib/**/*.spec.ts",
+    "lib/**/*.d.ts",
+    "lib/__test__/commands/template-handler.ts"
+  ]
+}
