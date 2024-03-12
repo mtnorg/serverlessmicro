@@ -1,0 +1,15 @@
+{
+  "_pleaseNote": "Please do not touch this file. It will allow you to update your template in the future.",
+  "project": {
+    "features": {
+      "registeredInAppStore": false,
+      "semanticRelease": false
+    },
+    "template": "serverless-ms-template",
+    "repoName": ""
+  },
+  "runtime": {
+    "node": "v21.2.0"
+  },
+  "version": "2.0.0"
+}
