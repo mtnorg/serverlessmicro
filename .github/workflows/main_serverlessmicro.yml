@@ -65,5 +65,5 @@ jobs:
         with:
           app-name: 'serverlessmicro'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          # package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B0D72071DD64AAABDE8F91CEBEEB2EA }}
