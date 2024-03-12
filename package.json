@@ -37,7 +37,6 @@
     "@commitlint/config-conventional": "^17.8.1",
     "@commitlint/prompt-cli": "^18.6.1",
     "commitlint-plugin-function-rules": "^2.0.2",
-    "@mtnkente/eslint-config": "^0.0.1",
     "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
