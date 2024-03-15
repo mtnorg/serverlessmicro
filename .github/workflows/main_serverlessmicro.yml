@@ -31,7 +31,7 @@ jobs:
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           npm install
           npm run build --if-present
-          # npm run test --if-present
+          npm run test --if-present
           popd
 
       - name: Zip artifact for deployment
@@ -65,5 +65,5 @@ jobs:
         with:
           app-name: 'serverlessmicro'
           slot-name: 'Production'
-          # package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5B0D72071DD64AAABDE8F91CEBEEB2EA }}
+          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6C60DB4006B14F8291364D8B96F46620 }}
